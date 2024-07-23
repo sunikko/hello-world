@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV and Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .cv-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .skills, .portfolio {
+            margin-bottom: 30px;
+        }
+
+        .skills h2, .portfolio-title h2 {
+            margin-bottom: 10px;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 5px;
+        }
+
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .skill span {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        .bar-container {
+            display: inline-block;
+            width: 70%;
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            vertical-align: middle;
+        }
+
+        .bar {
+            height: 100%;
+            background: #2980b9; /* Dark Blue Color */
+        }
+
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .portfolio .card {
+            width: calc(50% - 10px); /* Two cards in a row */
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .portfolio .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .portfolio .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .portfolio .card-front, .portfolio .card-back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+        }
+
+        .portfolio .card-front {
+            background-color: #fff;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .portfolio .card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio img {
+            width: 100%;
+            height: 13rem;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 640px;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header>
+            <h1>Soyeon Won</h1>
+            <p>Software Developer</p>
+            <p>Email: w.soyeon@gmail.com | Mobile: 07526556912</p>
+        </header>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skill">
+                <span>Python</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>Django</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>SQL</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>HTML</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>CSS</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            
+            <div class="skill">
+                <span>PHP</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>C++</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 80%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="portfolio-title">
+            <h2>Portfolio</h2>
+        </div>
+        <section class="portfolio">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>MockTest Report</h2>
+                        <img src="https://github.com/sunikko/sunikko.github.io/blob/master/pages/images/cv-mocktest-img-01.png?raw=true" alt="Project Image">
+                        <p>PHP, JavaScript(Chart.js), MySQL, Data Analysis</p>
+                        
+                    </div>
+                    <div class="card-back">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/DIyMc7EP7jo" allowfullscreen></iframe>
+                        </div>
+                        <p>It is categorised into different sections, with subcategories and subtopics.<br>
+Customer can also see the missed marks and other details.<br>
+Markers’ page - select from general options. The system then auto-generates comments</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Online Lecture Platform</h2>
+                        <img src="https://github.com/sunikko/sunikko.github.io/blob/master/pages/images/1721762116081.jpg?raw=true" alt="Project Image">
+                        <p>Django, Python, JavaScript, MySQL, Git, Stripe, AWS</p>
+                    </div>
+                    <div class="card-back">
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/3rk_n5tsVKM" allowfullscreen></iframe>
+                        </div>
+                        <a href="https://youtube.com/clip/Ugkx7NlNqZG8GF1OVST3Ro4yTZsMovGDpEAQ" target="_blank">link</a>
+                        <p>Managed the entire process, from database design(Model App) to payment system<br>
+Developed quizzes pages and ranking system(Coin) - RESTful API
+</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Enrolment System</h2>
+                        <img src="https://github.com/sunikko/sunikko.github.io/blob/master/pages/images/1721762116081.jpg?raw=true" alt="Project Image">
+                        <p>PHP, JavaScript, MySQL, Git</p>
+                    </div>
+                    <div class="card-back">
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/3rk_n5tsVKM" allowfullscreen></iframe>
+                        </div>
+                        <a href="https://youtube.com/clip/Ugkx7NlNqZG8GF1OVST3Ro4yTZsMovGDpEAQ" target="_blank">link</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Livestream Lecture Platform</h2>
+                        <img src="https://github.com/sunikko/sunikko.github.io/blob/master/pages/images/1721762116081.jpg?raw=true" alt="Project Image">
+                        <p>PHP Scheduler, BBB(livestream open source) API</p>
+                    </div>
+                    <div class="card-back">
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/3rk_n5tsVKM" allowfullscreen></iframe>
+                        </div>
+                        <a href="https://youtube.com/clip/Ugkx7NlNqZG8GF1OVST3Ro4yTZsMovGDpEAQ" target="_blank">link</a>
+                        <p>Managed the entire process, from database design(Model App) to payment system<br>
+Developed quizzes pages and ranking system(Coin) - RESTful API
+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
