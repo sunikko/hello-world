@@ -17,13 +17,13 @@
             max-width: 800px;
             margin: 0 auto;
             background: #fff;
-            padding: 20px;
+            padding: 1.5rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
 
         header h1 {
@@ -31,55 +31,55 @@
         }
 
         header p {
-            margin: 5px 0;
+            margin: .3rem 0;
             color: #555;
         }
 
         .skills, .portfolio {
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
 
         .skills h2, .portfolio-title h2 {
-            margin-bottom: 10px;
-            border-bottom: 2px solid #2980b9;
-            padding-bottom: 5px;
+            margin-bottom: .8rem;
+            border-bottom: .2rem solid #2980b9;
+            padding-bottom: .3rem;
         }
 
         .skill {
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
         }
 
         .skill span {
             display: inline-block;
-            width: 100px;
+            width: 80rem;
             font-weight: bold;
         }
 
         .bar-container {
             display: inline-block;
             width: 70%;
-            height: 20px;
+            height: 1.3rem;
             background: #ddd;
-            border-radius: 10px;
+            border-radius: .8rem;
             overflow: hidden;
             vertical-align: middle;
         }
 
         .bar {
             height: 100%;
-            background: #2980b9; /* Dark Blue Color */
+            background: #2980b9;
         }
 
         .portfolio {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 1.4rem;
         }
 
         .portfolio .card {
-            width: calc(50% - 10px); /* Two cards in a row */
-            height: 400px;
-            perspective: 1000px;
+            width: calc(50% - 0.8rem);
+            height: 23rem;
+            perspective: 80rem;
         }
 
         .portfolio .card-inner {
@@ -101,7 +101,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            border-radius: 10px;
+            border-radius: .8rem;
         }
 
         .portfolio .card-front {
@@ -111,7 +111,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: .8rem;
             box-sizing: border-box;
         }
 
@@ -119,7 +119,7 @@
             background-color: #2980b9;
             color: white;
             transform: rotateY(180deg);
-            padding: 20px;
+            padding: 1.4rem;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -153,31 +153,13 @@
 <body>
     <div class="cv-container">
         <header>
-            <h1>Soyeon Won</h1>
+            <h1>Soy Won</h1>
             <p>Software Developer</p>
             <p>Email: w.soyeon@gmail.com | Mobile: 07526556912</p>
         </header>
 
         <section class="skills">
             <h2>Skills</h2>
-            <div class="skill">
-                <span>Python</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 85%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <span>Django</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 80%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <span>SQL</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 85%;"></div>
-                </div>
-            </div>
             <div class="skill">
                 <span>HTML</span>
                 <div class="bar-container">
@@ -187,26 +169,46 @@
             <div class="skill">
                 <span>CSS</span>
                 <div class="bar-container">
-                    <div class="bar" style="width: 80%;"></div>
+                    <div class="bar" style="width: 85%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span>JavaScript</span>
                 <div class="bar-container">
+                    <div class="bar" style="width: 90%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <span>Python</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>Django</span>
+                <div class="bar-container">
                     <div class="bar" style="width: 85%;"></div>
                 </div>
             </div>
+            <div class="skill">
+                <span>SQL</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 90%;"></div>
+                </div>
+            </div>
+            
             
             <div class="skill">
                 <span>PHP</span>
                 <div class="bar-container">
-                    <div class="bar" style="width: 85%;"></div>
+                    <div class="bar" style="width: 90%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span>C++</span>
                 <div class="bar-container">
-                    <div class="bar" style="width: 80%;"></div>
+                    <div class="bar" style="width: 85%;"></div>
                 </div>
             </div>
         </section>
@@ -219,7 +221,7 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <h2>MockTest Report</h2>
-                        <img src="https://github.com/sunikko/hello-world/blob/master/cv-mocktest-img-01.png?raw=true" alt="Project Image">
+                        <img src="https://github.com/sunikko/hello-world/blob/master/images/cv-mocktest-img-01.png?raw=true" alt="Project Image">
                         <p>PHP, JavaScript(Chart.js), MySQL, Data Analysis</p>
                         
                     </div>
@@ -227,9 +229,9 @@
                         <div class="video-container">
                             <iframe src="https://www.youtube.com/embed/DIyMc7EP7jo" allowfullscreen></iframe>
                         </div>
-                        <p>It is categorised into different sections, with subcategories and subtopics.<br>
-Customer can also see the missed marks and other details.<br>
-Markers’ page - select from general options. The system then auto-generates comments</p>
+                        <p>It is categorized into sections with subcategories and subtopics.<br>
+Customers can also view missed marks and other details.<br>
+On the markers’ page, users select from general options, and the system then auto-generates comments.</p>
                     </div>
                 </div>
             </div>
@@ -238,16 +240,16 @@ Markers’ page - select from general options. The system then auto-generates co
                 <div class="card-inner">
                     <div class="card-front">
                         <h2>Online Lecture Platform</h2>
-                        <img src="https://github.com/sunikko/hello-world/blob/master/cv-aplus11plus-img-01.jpg?raw=true" alt="Project Image">
+                        <img src="https://github.com/sunikko/hello-world/blob/master/images/cv-aplus11plus-img-01.jpg?raw=true" alt="Project Image">
                         <p>Django, Python, JavaScript, MySQL, Git, Stripe, AWS</p>
                     </div>
                     <div class="card-back">
                         <div class="video-container">
-                            <iframe src="https://youtu.be/3rk_n5tsVKM" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/3rk_n5tsVKM" allowfullscreen></iframe>
                         </div>
-                        <a href="https://youtube.com/clip/Ugkx7NlNqZG8GF1OVST3Ro4yTZsMovGDpEAQ" target="_blank">link</a>
-                        <p>Managed the entire process, from database design(Model App) to payment system<br>
-Developed quizzes pages and ranking system(Coin) - RESTful API
+                        <a href="https://www.youtube.com/embed/3rk_n5tsVKM" target="_blank">link</a>
+                        <p>Managed the entire process, from designing the database (Model App) to implementing the payment system.<br>
+Developed quiz pages and a ranking(Coin) system using RESTful APIs.
 </p>
                     </div>
                 </div>
@@ -257,15 +259,16 @@ Developed quizzes pages and ranking system(Coin) - RESTful API
                 <div class="card-inner">
                     <div class="card-front">
                         <h2>Enrolment System</h2>
-                        <img src="https://github.com/sunikko/sunikko.github.io/blob/master/pages/images/1721762116081.jpg?raw=true" alt="Project Image">
-                        <p>PHP, JavaScript, MySQL, Git</p>
+                        <img src="https://github.com/sunikko/hello-world/blob/master/images/cv-enrolment-img-01.png?raw=true" alt="Project Image">
+                        <p>JavaScript, MySQL, Git, Google API</p>
                     </div>
                     <div class="card-back">
                         <div class="video-container">
-                            <iframe src="https://youtu.be/3rk_n5tsVKM" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/xCS1MJsMYjM" allowfullscreen></iframe>
                         </div>
-                        <a href="https://youtube.com/clip/Ugkx7NlNqZG8GF1OVST3Ro4yTZsMovGDpEAQ" target="_blank">link</a>
-                        <p></p>
+                        <a href="https://youtu.be/xCS1MJsMYjM" target="_blank">link</a>
+                        <p>The booking timetable updates in real-time from the actual class schedule data.<br>
+Send data to Google Sheets using the Google API.
                     </div>
                 </div>
             </div>
@@ -274,16 +277,17 @@ Developed quizzes pages and ranking system(Coin) - RESTful API
                 <div class="card-inner">
                     <div class="card-front">
                         <h2>Livestream Lecture Platform</h2>
-                        <img src="https://github.com/sunikko/sunikko.github.io/blob/master/pages/images/1721762116081.jpg?raw=true" alt="Project Image">
+                        <img src="https://github.com/sunikko/hello-world/blob/master/images/cv-classroom-status.jpg?raw=true" alt="Project Image">
                         <p>PHP Scheduler, BBB(livestream open source) API</p>
                     </div>
                     <div class="card-back">
                         <div class="video-container">
-                            <iframe src="https://youtu.be/3rk_n5tsVKM" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/emEyraQweaY" allowfullscreen></iframe>
                         </div>
-                        <a href="https://youtube.com/clip/Ugkx7NlNqZG8GF1OVST3Ro4yTZsMovGDpEAQ" target="_blank">link</a>
-                        <p>Managed the entire process, from database design(Model App) to payment system<br>
-Developed quizzes pages and ranking system(Coin) - RESTful API
+                        <a href="https://youtu.be/emEyraQweaY" target="_blank">link</a>
+                        <p>Automatically generate livestream classrooms(Used PHP Scheduler) based on the timetable.<br>
+Set up and integrated the BBB (BigBlueButton) API for live streaming.<br>
+Using the BBB API to get and manage classroom status (mute, no camera, uploading materials, attendance check).
 </p>
                     </div>
                 </div>
