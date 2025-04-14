@@ -1,49 +1,84 @@
-💼 **Soy Won – Developer Portfolio**
-Welcome to my personal developer portfolio, showcasing some of the key projects I’ve worked on using technologies like PHP, Python (Django), JavaScript, MySQL, and more. This responsive and interactive CV+Portfolio page gives an overview of my skills and real-world applications I’ve developed, complete with live demo videos and visuals.
+# 💼 Soy Won – Developer Portfolio
 
-🔗 **Live Preview**
-You can view the portfolio live in a browser by opening [index.html](https://sunikko.github.io/hello-world/).
+Welcome to my personal developer portfolio, showcasing some of the key projects I’ve worked on using technologies like **PHP**, **Python (Django)**, **JavaScript**, **MySQL**, and more.  
+This responsive and interactive CV + portfolio page gives an overview of my skills and real-world applications I’ve developed, complete with live demo videos and visuals.
 
+---
 
-🛠️ **Technologies Used**
-HTML5 & CSS3
-Vanilla JavaScript, Chart.js
-Responsive Web Design
-PHP, Django, Python (used in back-end project implementations)
-MySQL
-Git & GitHub
-Google API, Stripe API, AWS (per project)
+## 🔗 Live Preview
 
-🧩 **Portfolio Projects**
-Each project card flips to reveal an embedded YouTube video demo, a short project description, and a list of technologies used.
+You can view the portfolio live in a browser by opening:  
+👉 [index.html](https://sunikko.github.io/hello-world/)
 
-🔍 Highlighted Projects
-**Mock Test Report System**
-Technologies: PHP, JavaScript (Chart.js), MySQL
+---
 
-Features: Data categorization, automated comment generation, detailed result views
+## 🛠️ Technologies Used
 
-**Online Lecture Platform**
+- HTML5 & CSS3  
+- Vanilla JavaScript, Chart.js  
+- Responsive Web Design  
+- PHP, Django, Python (used in back-end project implementations)  
+- MySQL  
+- Git & GitHub  
+- Google API, Stripe API, AWS (per project)
+- React Native, TypeScript, OpenAI API _(currently learning)_
 
-Technologies: Django, Python, Stripe, AWS
+---
 
-Features: Full-stack development including user auth, quizzes, payment system
+## 🔍 Highlighted Projects
 
-**Livestream Lecture System**
+### 📊 Mock Test Report System
 
-Technologies: PHP Scheduler, BigBlueButton (BBB) API
+**Technologies:** PHP, JavaScript (Chart.js), MySQL  
+**Features:**
+- Data grouped by sections/subtopics  
+- Auto-generated marker comments  
+- Highlight missed marks in result view  
 
-Features: Auto-creation of livestream classrooms, live status monitoring, attendance tracking
+🎥 [Watch Demo](https://www.youtube.com/embed/DIyMc7EP7jo)
 
-**Enrolment System**
+---
 
-Technologies: JavaScript, MySQL, Google API
+### 🎓 Online Lecture Platform
 
-Features: Dynamic timetable updates, integration with Google Sheets
+**Technologies:** Django, Python, Stripe API, AWS  
+**Features:**
+- Full-stack development with RESTful API  
+- Authentication, quizzes, and ranking system  
+- Payment integration via Stripe  
 
+🎥 [Watch Demo](https://www.youtube.com/embed/3rk_n5tsVKM)
 
-🙋 **About Me**
-I’m Soy Won, a software developer with experience in both web and application development. Passionate about creating real-world solutions and continuously learning to improve my craft.
+---
 
-📧 Email: w.soyeon@gmail.com
-📱 Mobile: 07526556912
+### 📺 Livestream Lecture Platform
+
+**Technologies:** PHP Scheduler, BigBlueButton (BBB) API  
+**Features:**
+- Auto-creation of livestream rooms  
+- Live mic/cam control for tutors  
+- Real-time attendance tracking  
+
+🎥 [Watch Demo](https://www.youtube.com/embed/emEyraQweaY)
+
+---
+
+### 📅 Enrolment System
+
+**Technologies:** JavaScript, MySQL, Google API  
+**Features:**
+- Real-time Google Sheets integration  
+- Dynamic booking and timetable updates  
+- Backend syncing and manual overrides  
+
+🎥 [Watch Demo](https://www.youtube.com/embed/xCS1MJsMYjM)
+
+---
+
+## 🙋 About Me
+
+I’m **Soy Won**, a software developer with experience in both web and application development.  
+I'm passionate about creating real-world solutions and continuously learning to improve my craft.
+
+📧 **Email:** [w.soyeon@gmail.com](mailto:w.soyeon@gmail.com)  
+📱 **Mobile:** 07526556912
