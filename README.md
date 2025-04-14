@@ -75,6 +75,19 @@ You can view the portfolio live in a browser by opening:
 
 ---
 
+### 📊 AI Recording App _(currently learning)_
+
+**Technologies:** Next.js, TypeScript, React Native(Expo), OpenAI API  
+**Features:**
+- Voice recording feature  
+- Audio-to-script conversion  
+- Summarisation using OpenAI API _(currently learning)_
+- Camera Support: Integrated native camera API to allow photo capture during recordings
+- Saves data locally on the device
+
+🎥 [github](https://github.com/sunikko/AirecorderAppExpo)
+
+
 ## 🙋 About Me
 
 I’m **Soy Won**, a software developer with experience in both web and application development.  
