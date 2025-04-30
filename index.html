@@ -3,296 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My CV and Portfolio</title>
+    <title>Soy Won | CV & Portfolio</title>
     <style>
+        :root {
+            --primary: #2980b9;
+            --light-bg: #f9f9f9;
+            --text-color: #333;
+            --card-bg: #fff;
+            --radius: 8px;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-
-        .cv-container {
-            width: 90%;
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 1.5rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .container {
+            width: 90%; max-width: 1000px;
+            margin: 2rem auto;
         }
-
         header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
-
         header h1 {
-            margin: 0;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: .3rem;
         }
-
         header p {
-            margin: .3rem 0;
+            font-size: 1rem;
             color: #555;
         }
-
-        .skills, .portfolio {
-            margin-bottom: 2rem;
+        .section-title {
+            display: inline-block;
+            border-bottom: 3px solid var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-
-        .skills h2, .portfolio-title h2 {
-            margin-bottom: .8rem;
-            border-bottom: .2rem solid #2980b9;
-            padding-bottom: .3rem;
+        /* Skills */
+        .skills {
+            margin-bottom: 3rem;
         }
-
         .skill {
             margin-bottom: 1rem;
         }
-
-        .skill span {
-            display: inline-block;
-            width: 80rem;
+        .skill .label {
+            display: block;
+            margin-bottom: .3rem;
             font-weight: bold;
         }
-
         .bar-container {
-            display: inline-block;
-            width: 70%;
-            height: 1.3rem;
+            width: 100%; height: 12px;
             background: #ddd;
-            border-radius: .8rem;
+            border-radius: var(--radius);
             overflow: hidden;
-            vertical-align: middle;
         }
-
         .bar {
             height: 100%;
-            background: #2980b9;
+            background: var(--primary);
         }
-
+        /* Portfolio grid */
         .portfolio {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
-
-        .portfolio .card {
-            width: calc(50% - 0.8rem);
-            height: 23rem;
-            perspective: 80rem;
-        }
-
-        .portfolio .card-inner {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 8px var(--shadow);
+            overflow: hidden;
+            transition: transform .3s;
             position: relative;
         }
-
-        .portfolio .card:hover .card-inner {
-            transform: rotateY(180deg);
+        .card:hover { transform: translateY(-5px); }
+        .card img {
+            width: 100%; height: 180px;
+            object-fit: cover;
         }
-
-        .portfolio .card-front, .portfolio .card-back {
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: .8rem;
+        .card-content {
+            padding: 1rem;
         }
-
-        .portfolio .card-front {
-            background-color: #fff;
-            color: black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .card-content h3 {
+            margin-bottom: .5rem;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        .card-content p {
+            margin-bottom: .8rem;
+            font-size: .95rem;
+        }
+        .card-content button {
+            display: inline-block;
+            padding: .5rem 1rem;
+            font-size: .9rem;
+            border: none;
+            border-radius: var(--radius);
+            background: var(--primary);
+            color: #fff;
+            cursor: pointer;
+            transition: background .3s;
+        }
+        .card-content button:hover { background: #21618c; }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
             justify-content: center;
-            padding: .8rem;
-            box-sizing: border-box;
-        }
-
-        .portfolio .card-back {
-            background-color: #2980b9;
-            color: white;
-            transform: rotateY(180deg);
-            padding: 1.4rem;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            z-index: 1000;
         }
-
-        .portfolio img {
-            width: 100%;
-            height: 13rem;
-        }
-
-        .video-container {
-            width: 100%;
-            max-width: 640px;
+        .modal.active { display: flex; }
+        .modal-content {
+            background: #fff;
+            width: 90%; max-width: 720px;
+            border-radius: var(--radius);
+            overflow: hidden;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
         }
-
-        .video-container iframe {
+        .modal-content iframe {
+            width: 100%; height: 400px;
+        }
+        .modal-close {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: .5rem; right: .5rem;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
         }
-
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.25rem; }
+        }
+        /* projects */
+        .project {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .project h2 {
+            margin: 0 0 .5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .project h2 .icon {
+            margin-right: .5rem;
+            font-size: 1.5rem;
+        }
+        .project .tech {
+            font-style: italic;
+            margin-bottom: .8rem;
+            color: #555;
+        }
+        .project ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+        .project ul li {
+            margin-bottom: .5rem;
+            line-height: 1.4;
+        }
+        .project button {
+            display: inline-block;
+            padding: .5rem 1rem;
+            font-size: .9rem;
+            border: none;
+            border-radius: var(--radius);
+            background: var(--primary);
+            color: #fff;
+            cursor: pointer;
+            transition: background .3s;
+        }
+        .project button:hover { background: #21618c; }
     </style>
 </head>
 <body>
-    <div class="cv-container">
+    <div class="container">
         <header>
             <h1>Soy Won</h1>
-            <p>Software Developer</p>
-            <p>Email: w.soyeon@gmail.com | Mobile: 07526556912</p>
+            <p>Software Developer | w.soyeon@gmail.com | 07526 556912</p>
         </header>
-
         <section class="skills">
-            <h2>Skills</h2>
+            <span class="section-title">Skills</span>
             <div class="skill">
-                <span>HTML</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 90%;"></div>
-                </div>
+                <span class="label">HTML</span>
+                <div class="bar-container"><div class="bar" style="width:95%"></div></div>
             </div>
             <div class="skill">
-                <span>CSS</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 85%;"></div>
-                </div>
+                <span class="label">CSS</span>
+                <div class="bar-container"><div class="bar" style="width:90%"></div></div>
             </div>
             <div class="skill">
-                <span>JavaScript</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 90%;"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <span>Python</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 90%;"></div>
-                </div>
+                <span class="label">JavaScript</span>
+                <div class="bar-container"><div class="bar" style="width:95%"></div></div>
             </div>
             <div class="skill">
-                <span>Django</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 85%;"></div>
-                </div>
+                <span class="label">PHP</span>
+                <div class="bar-container"><div class="bar" style="width:95%"></div></div>
             </div>
             <div class="skill">
-                <span>SQL</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 90%;"></div>
-                </div>
-            </div>
-            
-            
-            <div class="skill">
-                <span>PHP</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 90%;"></div>
-                </div>
+                <span class="label">Python & Django</span>
+                <div class="bar-container"><div class="bar" style="width:90%"></div></div>
             </div>
             <div class="skill">
-                <span>C++</span>
-                <div class="bar-container">
-                    <div class="bar" style="width: 85%;"></div>
-                </div>
+                <span class="label">SQL</span>
+                <div class="bar-container"><div class="bar" style="width:90%"></div></div>
             </div>
         </section>
-
-        <div class="portfolio-title">
-            <h2>Portfolio</h2>
-        </div>
-        <section class="portfolio">
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h2>MockTest Report</h2>
-                        <img src="https://github.com/sunikko/hello-world/blob/master/images/cv-mocktest-img-01.png?raw=true" alt="Project Image">
-                        <p>PHP, JavaScript(Chart.js), MySQL, Data Analysis</p>
-                        
-                    </div>
-                    <div class="card-back">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/DIyMc7EP7jo" allowfullscreen></iframe>
-                        </div>
-                        <p>It is categorized into sections with subcategories and subtopics.<br>
-Customers can also view missed marks and other details.<br>
-On the markers’ page, users select from general options, and the system then auto-generates comments.</p>
-                    </div>
-                </div>
+        <section class="skills">
+            <span class="section-title">Highlighted Projects</span>
+    
+            <div class="project" data-video="DIyMc7EP7jo">
+                <h4><span class="icon">📊</span>Mock Test Report System</h4>
+                <p class="tech">Technologies: PHP, JavaScript (Chart.js), MySQL</p>
+                <ul>
+                    <li>Data grouped by sections/subtopics</li>
+                    <li>Auto-generated marker comments</li>
+                    <li>Highlight missed marks in result view</li>
+                </ul>
+                <button class="open-modal">View Demo</button>
             </div>
-            <!-- Add more cards as needed -->
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h2>Online Lecture Platform</h2>
-                        <img src="https://github.com/sunikko/hello-world/blob/master/images/cv-aplus11plus-img-01.jpg?raw=true" alt="Project Image">
-                        <p>Django, Python, JavaScript, MySQL, Git, Stripe, AWS</p>
-                    </div>
-                    <div class="card-back">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/3rk_n5tsVKM" allowfullscreen></iframe>
-                        </div>
-                        <a href="https://www.youtube.com/embed/3rk_n5tsVKM" target="_blank">link</a>
-                        <p>Managed the entire process, from designing the database (Model App) to implementing the payment system.<br>
-Developed quiz pages and a ranking(Coin) system using RESTful APIs.
-</p>
-                    </div>
-                </div>
+    
+            
+    
+            <div class="project" data-video="5GB6coclB1k">
+                <h4><span class="icon">📺</span>Livestream Lecture Platform</h4>
+                <p class="tech">Technologies: PHP Scheduler, BigBlueButton (BBB) API</p>
+                <ul>
+                    <li>Auto-creation of livestream rooms</li>
+                    <li>Live mic/cam control for tutors</li>
+                    <li>Real-time attendance tracking</li>
+                </ul>
+                <button class="open-modal">View Demo</button>
             </div>
-            <!-- Add more cards as needed -->
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h2>Livestream Lecture Platform</h2>
-                        <img src="https://github.com/sunikko/hello-world/blob/master/images/cv-classroom-status.jpg?raw=true" alt="Project Image">
-                        <p>PHP Scheduler, BBB(livestream open source) API</p>
-                    </div>
-                    <div class="card-back">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/5GB6coclB1k" allowfullscreen></iframe>
-                        </div>
-                        <a href="https://youtu.be/5GB6coclB1k" target="_blank">link</a>
-                        <p>Automatically generate livestream classrooms(Used PHP Scheduler) based on the timetable.<br>
-Set up and integrated the BBB (BigBlueButton) API for live streaming.<br>
-Using the BBB API to get and manage classroom status (mute, no camera, uploading materials, attendance check).
-</p>
-                    </div>
-                </div>
+    
+            <div class="project" data-video="xCS1MJsMYjM">
+                <h4><span class="icon">📅</span>Enrolment System</h4>
+                <p class="tech">Technologies: JavaScript, MySQL, Google API</p>
+                <ul>
+                    <li>Real-time Google Sheets integration</li>
+                    <li>Dynamic booking and timetable updates</li>
+                    <li>Backend syncing and manual overrides</li>
+                </ul>
+                <button class="open-modal">View Demo</button>
             </div>
-            <!-- Add more cards as needed -->
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h2>Enrolment System</h2>
-                        <img src="https://github.com/sunikko/hello-world/blob/master/images/cv-enrolment-img-01.png?raw=true" alt="Project Image">
-                        <p>JavaScript, MySQL, Git, Google API</p>
-                    </div>
-                    <div class="card-back">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/xCS1MJsMYjM" allowfullscreen></iframe>
-                        </div>
-                        <a href="https://youtu.be/xCS1MJsMYjM" target="_blank">link</a>
-                        <p>The booking timetable updates in real-time from the actual class schedule data.<br>
-Send data to Google Sheets using the Google API.
-                    </div>
-                </div>
+            <div class="project" data-video="3rk_n5tsVKM">
+                <h4><span class="icon">🎓</span>Online Lecture Platform</h4>
+                <p class="tech">Technologies: Django, Python, Stripe API, AWS</p>
+                <ul>
+                    <li>Full-stack development with RESTful API</li>
+                    <li>Authentication, quizzes, and ranking system</li>
+                    <li>Payment integration via Stripe</li>
+                </ul>
+                <button class="open-modal">View Demo</button>
             </div>
         </section>
     </div>
+
+    <!-- Modal Structure -->
+    <div class="modal" id="video-modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-content" id="modal-content">
+            <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById('video-modal');
+        const iframe = document.getElementById('modal-iframe');
+        const closeBtn = document.getElementById('modal-close');
+
+        document.querySelectorAll('.open-modal').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const videoId = btn.closest('.project').dataset.video;
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                modal.classList.add('active');
+            });
+        });
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            iframe.src = '';
+        });
+        modal.addEventListener('click', e => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                iframe.src = '';
+            }
+        });
+    </script>
 </body>
 </html>
